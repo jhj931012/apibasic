@@ -1,6 +1,7 @@
 package com.example.apibasic.post.dto;
 
 import com.example.apibasic.post.entity.PostEntity;
+import io.swagger.v3.oas.annotations.Parameter;
 import lombok.*;
 
 import javax.validation.constraints.Max;
@@ -24,6 +25,7 @@ public class PostCreateDTO {
      */
     @NotBlank
     @Size(min = 2, max = 5) // 글자수는 2~5자 사이
+    @Parameter(name = "작성자", description = "게시물 작성자를 입력", example = "김철수")
     private String writer;
     @NotBlank
     @Min(1) @Max(20)
