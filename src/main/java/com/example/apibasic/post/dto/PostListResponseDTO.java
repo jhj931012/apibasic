@@ -13,4 +13,6 @@ public class PostListResponseDTO {
 
     private int count;
     private List<PostResponseDTO> posts;
+
+    private PageResponseDTO pageInfo;
 }

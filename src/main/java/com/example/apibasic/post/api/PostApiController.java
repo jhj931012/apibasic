@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.querydsl.QPageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -44,11 +45,11 @@ public class PostApiController {
 
     // 게시물 목록 조회
     @GetMapping
-    public ResponseEntity<?> list() {
+    public ResponseEntity<?> list(PageRequestDTO pageRequestDTO) {
         log.info("/posts GET request");
-
+        log.info("request page info - ()", pageRequestDTO);
         try {
-            PostListResponseDTO listResponseDTO = postService.getList();
+            PostListResponseDTO listResponseDTO = postService.getList(pageRequestDTO);
 
             return ResponseEntity
                     .ok()

@@ -66,7 +66,7 @@ class MemberRepositoryTest {
         // given - when - then 패턴
         // given : 테스트시 주어지는 데이터
         MemberEntity saveMember = MemberEntity.builder()
-                .account("zzz1234")
+                .account("zzz1234648")
                 .password("1234")
                 .nickName("꾸러긔")
                 .gender(FEMALE)
